@@ -9,8 +9,8 @@ public class GuessingGame {
 	ArrayList<Integer> numbers = new ArrayList<Integer>(9000);
 
 	public int x;
-	public int Guesses;
-	public int y;
+	public int Guesses; // Number of attempts at guessing the number
+	public int random; //Random guess
 
 	public GuessingGame() {
 		for (int i = 1000; i < 10000; i++) {
@@ -21,8 +21,8 @@ public class GuessingGame {
 
 	public int myGuessIs() {
 		Guesses = Guesses + 1;
-		y = (int) (Math.random() * (numbers.size()));
-		x = numbers.get(y);
+		random = (int) (Math.random() * (numbers.size()));
+		x = numbers.get(random);
 		return x;
 	}
 
@@ -78,7 +78,7 @@ public class GuessingGame {
 		int myguess = 0;
 
 		do {
-			myguess = gamer.myGuessIs();
+			myguess = gamer.myGuessIs(); //Generate a guess
 			if (myguess == -1) {
 				JOptionPane
 						.showMessageDialog(
